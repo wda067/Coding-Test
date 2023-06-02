@@ -38,4 +38,4 @@ def solution(maps):
     return -1 if answer == 1 else answer
 
 maps = [[1,0,1,1,1],[1,0,1,0,1],[1,0,1,1,1],[1,1,1,0,1],[0,0,0,0,1]]
-print(solution(maps))
+print(solution(maps))  # 정답 11
