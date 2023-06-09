@@ -18,13 +18,13 @@ def solution(name):
                 cnt += sorted(alphabet_list, reverse=True).index(sorted_name[i]) + 1
 
         # 연속되는 A의 개수 확인
-        idx = i + 1
-        while idx < len(name) and name[idx] == 'A':
-            idx += 1
+        next_idx = i + 1
+        while next_idx < len(name) and name[next_idx] == 'A':
+            next_idx += 1
 
         # Left, Right 계산
-        move = min(move, i * 2 + len(name) - idx)  # 순서대로 가는 경우 vs 뒤로 돌아가는 경우
-        move = min(move, (len(name) - idx) * 2 + i)  # 처음부터 뒤로 돌아가는 경우 고려
+        move = min(move, i * 2 + len(name) - next_idx)  # 순서대로 가는 경우 vs 뒤로 돌아가는 경우
+        move = min(move, (len(name) - next_idx) * 2 + i)  # 처음부터 뒤로 돌아가는 경우 고려
 
     return cnt + move
 
